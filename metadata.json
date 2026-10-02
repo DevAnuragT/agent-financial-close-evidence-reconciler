@@ -1,0 +1,35 @@
+{
+  "slug": "financial-close-evidence-reconciler",
+  "title": "Financial Close Evidence Reconciler",
+  "category": "finance-operations",
+  "description": "Checks close evidence for unresolved account balances, unexplained variance, and reviewer sign-off.",
+  "decision": "Checks close evidence for unresolved account balances, unexplained variance, and reviewer sign-off.",
+  "limitations": "Uses caller-declared evidence only; does not verify external systems, legal requirements, or real-world truth. Human review remains required.",
+  "inputs": "A JSON object containing the documented fields. Numeric thresholds are deterministic and visible in agent.py.",
+  "good": {
+    "unreconciled_account_count": 0,
+    "variance_minor_units": 0,
+    "close_reviewer": "finance-controller"
+  },
+  "bad": {},
+  "rules": [
+    [
+      "unreconciled_account_count",
+      "unreconciled account count",
+      "max",
+      0
+    ],
+    [
+      "variance_minor_units",
+      "unexplained variance in minor units",
+      "max",
+      0
+    ],
+    [
+      "close_reviewer",
+      "close reviewer",
+      "required",
+      null
+    ]
+  ]
+}

@@ -1,0 +1,11 @@
+spec_version: "0.1.0"
+name: financial-close-evidence-reconciler
+version: 0.1.0
+description: "Checks close evidence for unresolved account balances, unexplained variance, and reviewer sign-off."
+skills:
+  - financial-close-evidence-reconciler-skill
+tools:
+  - audit-financial-close-evidence-reconciler
+tags:
+  - finance-operations
+  - evidence-driven
